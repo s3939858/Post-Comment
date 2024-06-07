@@ -344,4 +344,10 @@ public class PostTest {
                 post.postEmergency, post.chosenType, post.chosenEmergency, post.minTagChars, post.maxTagChars);
     }
 
+    // ONLY TEST THATS WRITES TO COMMENT FILE WITH ALL SUCCESSFUL FIELDS
+    @Test
+    public void testSuccessfulComment() {
+        post.writeCommentConfirm(2, 2, "This is a successful comment");
+    }
+
 }

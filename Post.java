@@ -225,7 +225,7 @@ public class Post {
     // METHOD TO WRITE TO FILE
     public void writeToFile(int postID, String postTitle, String postBody, String[] postTags, String[] postTypes,
             String[] postEmergency, int chosenType, int chosenEmergency) {
-        File file = new File("postdetails.txt");
+        File file = new File(postID + "_postdetails.txt");
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write("ID: " + postID + "\n" + "\n");
@@ -268,7 +268,7 @@ public class Post {
             postComments.add(validComment);
         }
 
-        try (FileWriter writer = new FileWriter(postID + "comments.txt")) {
+        try (FileWriter writer = new FileWriter(postID + "_comments.txt")) {
             for (int i = 0; i < postComments.size(); i++) {
                 writer.write("Comment " + (i + 1) + ": " + postComments.get(i) + "\n");
             }
